@@ -3,7 +3,7 @@ import {Link as LinkR} from 'react-router-dom'; // 異なるページに遷移�
 import {Link as LinkS} from 'react-scroll'; // 同じページで、リンクの場所にスクロールする機能
 
 export const Nav = styled.nav`
-  background: #000;
+  background: ${({scrollNav}) => (scrollNav ? '#000' : 'transparent')};
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -78,8 +78,9 @@ export const NavLinks = styled(LinkS)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+
   &.active {
-    border-bottom: 3px solid #01bf71;
+    border-bottom: 5px solid #01bf71;
   }
 `
 
